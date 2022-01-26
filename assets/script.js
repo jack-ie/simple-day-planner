@@ -26,7 +26,6 @@ const hour = [
 ]
 
 // time, date, day variables prints to html
-$("#currentTime").text(time);
 $("#currentDate").text(date);
 $("#currentDay").text(day);
 
@@ -43,7 +42,6 @@ for (let i = 0; i < hour.length; i++) {
     timeBlockDiv.addClass("row time-block hour");
     timeBlockDiv.attr("data-hour", hour[i]);
     pTag.text(hour[i]).addClass("col-sm-2 hour");
-    //console.log(this);
 
     // textarea
     let note = $("<textarea>").addClass(`col-sm-8 textarea-${i + 8} textbox`);
@@ -53,8 +51,6 @@ for (let i = 0; i < hour.length; i++) {
     // Appending the buttons that created on line 40, 49, 51---
     timeBlockDiv.append(pTag, note, save);
     $(".container").append(timeBlockDiv);
-    //console.log(timeBlockDiv);
-
 
     //if - else conditions
     if (hr < currentHour) {
@@ -76,9 +72,9 @@ for (let i = 0; i < hour.length; i++) {
 }
 
   // A button to clear out any previously saved user input data
-     $(`<button class="=btn btn-primary clear"></button>`).text("clear").appendTo(".clear");
+    //  $(`<button class="=btn btn-primary clear"></button>`).text("clear").appendTo(".clear");
 
-     $(".clear").on("click", function (event) {
+     $('.saveBtn').on("click", function (event) {
          event.preventDefault();
          localStorage.clear();
          location.reload()
