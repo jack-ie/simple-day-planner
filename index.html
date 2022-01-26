@@ -1,8 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <title>Day Planner</title>
@@ -14,13 +16,19 @@
 </head>
 
 <body>
-    <div class="jumbotron">
+    <header class="jumbotron">
         <h1 class="jumbotitle">Personal Day Planner</h1>
         <p class="lead">Simple day planner designed to help you plan your day.</p>
         <hr class="my-4">
         <p id='currentday'></p>
+       <p id="currentDate" class="lead"></p>
+      <p id="currentDay" class="lead"></p>
         <p class='click'>Click the button below to clear your day.</p>
         <a class="btn btn-primary btn-sm" href="#" role="button">Clear Previous Day</a>
-      </div>
+      </header>
+  
+    <div class="container">
+      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
 </html>
