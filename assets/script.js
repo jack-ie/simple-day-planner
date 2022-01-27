@@ -2,34 +2,32 @@
 const time = moment().format('H:mm a');
 const date = moment().format("MMMM Do YYYY");
 const day = moment().format('dddd');
-
-//to catch real time
+//to catch the current hour
 const currentHour = moment().format('H');
 
-// schedule hours
+// schedule time choices
 const hour = [
-    "08.00 AM",
-    "09.00 AM",
-    "10.00 AM",
-    "11.00 AM",
-    "12.00 PM",
-    "13.00 PM",
-    "14.00 PM",
-    "15.00 PM",
-    "16.00 PM",
-    "17.00 PM",
-    "18.00 PM",
-    "19.00 PM",
-    "20.00 PM",
-    "21.00 PM",
-    "22.00 PM"
+    "08:00 AM",
+    "09:00 AM",
+    "10:00 AM",
+    "11:00 AM",
+    "12:00 PM",
+    "1:00 PM",
+    "2:00 PM",
+    "3:00 PM",
+    "4:00 PM",
+    "5:00 PM",
+    "6:00 PM",
+    "7:00 PM",
+    "8:00 PM",
+    "9:00 PM",
+    "10:00 PM",
+    "11:00 PM",
 ]
 
 // time, date, day variables prints to html
 $("#currentDate").text(date);
 $("#currentDay").text(day);
-
-
 
 //for loop for the every hour, creating div-p, and the save button
 for (let i = 0; i < hour.length; i++) {
@@ -45,8 +43,9 @@ for (let i = 0; i < hour.length; i++) {
 
     // textarea
     let note = $("<textarea>").addClass(`col-sm-8 textarea-${i + 8} textbox`);
+
     // savebutton 
-    let save = $("<div>").addClass("col-sm-2 saveBtn").attr("data-hour", hour[i]).text("Save");
+    let save = $("<div>").addClass("col-sm-2 saveBtn").attr("data-hour", hour[i]).text("SAVE");
 
     // Appending the buttons that created on line 40, 49, 51---
     timeBlockDiv.append(pTag, note, save);
@@ -71,14 +70,11 @@ for (let i = 0; i < hour.length; i++) {
     note.val(toDo);
 }
 
-  // A button to clear out any previously saved user input data
-    //  $(`<button class="=btn btn-primary clear"></button>`).text("clear").appendTo(".clear");
-
-     $('.saveBtn').on("click", function (event) {
-         event.preventDefault();
-         localStorage.clear();
-         location.reload()
-     });
+$('.saveBtn').on("click", function (event) {
+    event.preventDefault();
+    localStorage.clear();
+    location.reload()
+});
 
 
 //SetItem in the localstorage which given by user
